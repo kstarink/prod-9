@@ -2,21 +2,78 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Main</title>
-
+    <title>
+        Main
+    </title>
     <link rel="stylesheet" href="main.css">
-
     <script type="text/montage-serialization">
-        {
-            "owner": {
-                "properties": {
-                    "element": {"#": "main"}
-                }
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "main"}
+            }
+        },
+        "button": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "button"},
+                "enabled": true,
+                "label": "Button"
+            }
+        },
+        "checkbox": {
+            "prototype": "digit/ui/checkbox.reel",
+            "properties": {
+                "element": {"#": "checkbox"},
+                "active": true,
+                "checked": true,
+                "enabled": true,
+                "value": "checkbox"
+            }
+        },
+        "list": {
+            "prototype": "digit/ui/list.reel",
+            "properties": {
+                "element": {"#": "list"}
+            }
+        },
+        "text": {
+            "prototype": "digit/ui/text.reel",
+            "properties": {
+                "element": {"#": "text"},
+                "value": "some text"
+            }
+        },
+        "textField": {
+            "prototype": "digit/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "textField"},
+                "placeholderValue": "Text"
+            }
+        },
+        "title": {
+            "prototype": "digit/ui/title.reel",
+            "properties": {
+                "element": {"#": "title"},
+                "value": "Todo"
             }
         }
+    }
     </script>
 </head>
 <body>
-    <div data-montage-id="main" data-montage-skin="light" class="Main"></div>
+    <div data-montage-id="main" data-montage-skin="light" class="Main">
+        <h1 data-montage-id="title"></h1>
+        <button data-montage-id="button">
+            <ul data-montage-id="list">
+                <li>
+                    Item
+                </li>
+            </ul>
+            <input data-montage-id="textField" type="text">
+            <input type="checkbox" data-montage-id="checkbox">
+        </button>
+        <p data-montage-id="text"></p>
+    </div>
 </body>
 </html>
